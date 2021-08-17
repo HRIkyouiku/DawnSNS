@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id')->autoIncrement();
             $table->integer('user_id');
             $table->string('posts',500);
-            $table->timestamps();
+            $table->timestamps('create_at');
         });
     }
 

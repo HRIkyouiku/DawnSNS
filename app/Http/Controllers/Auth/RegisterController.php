@@ -38,6 +38,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        // $this->middleware('auth');
     }
 
     /**
@@ -80,12 +81,13 @@ class RegisterController extends Controller
             $data = $request->input();
 
             $this->create($data);
-            return redirect('added');
+            $this->validator($data);
+            $username = $request->input('username');
+            return view('auth.added',compact('username'));
         }
         return view('auth.register');
     }
 
-    public function added(){
-        return view('auth.added');
+    public function added(Request $request){
     }
 }

@@ -2,8 +2,7 @@
 
 @section('content')
 
-{!! Form::open() !!}
-
+{!! Form::open(['url' => 'top']) !!}
 <p>DAWNSNSへようこそ</p>
 
 {{ Form::label('e-mail') }}
